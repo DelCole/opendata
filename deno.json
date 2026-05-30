@@ -1,0 +1,15 @@
+{
+  "imports": {
+    "json-server": "npm:json-server@1.0.0-beta.15"
+  },
+  "permissions": {
+    "default": {
+      "env": true,
+      "net": true,
+      "read": true
+    }
+  },
+  "tasks": {
+    "deploy": "deno run -A npm:json-server db.json --port 3000"
+  }
+}
