@@ -1,6 +1,7 @@
 {
   "imports": {
-    "json-server": "npm:json-server@1.0.0-beta.15"
+    "json-server": "npm:json-server@1.0.0-beta.15",
+    "lowdb": "npm:lowdb@7.0.1"
   },
   "permissions": {
     "default": {
@@ -10,6 +11,6 @@
     }
   },
   "tasks": {
-    "deploy": "deno run -A npm:json-server db.json --port 3000"
+    "deploy": "deno run -P main.ts"
   }
 }

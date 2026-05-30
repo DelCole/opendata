@@ -2,7 +2,8 @@
   "version": "5",
   "specifiers": {
     "npm:json-server@*": "1.0.0-beta.15",
-    "npm:json-server@1.0.0-beta.15": "1.0.0-beta.15"
+    "npm:json-server@1.0.0-beta.15": "1.0.0-beta.15",
+    "npm:lowdb@7.0.1": "7.0.1"
   },
   "npm": {
     "@polka/url@1.0.0-next.29": {
@@ -226,7 +227,8 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:json-server@1.0.0-beta.15"
+      "npm:json-server@1.0.0-beta.15",
+      "npm:lowdb@7.0.1"
     ]
   }
 }
