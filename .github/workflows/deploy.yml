@@ -47,5 +47,6 @@ jobs:
           project: "opendata"              # Replace with your project name
           entrypoint: "main.ts"            # Replace with your entrypoint file
           root: "."                        # Adjust if needed
+          token: ${{ secrets.DENO_DEPLOY_TOKEN }}  # Use the secret for authentication
         env:
           DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
