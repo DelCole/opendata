@@ -1,4 +1,4 @@
-name: Deploy to Deno Deploy with Git LFS
+name: Deploy
 on:
   push:
     branches: [main]
@@ -6,10 +6,12 @@ on:
     branches: [main]
 jobs:
   deploy:
-    name: Deploy
     runs-on: ubuntu-latest
+
     permissions:
-      contents: read   # Needed to clone the repository
+      id-token: write # This is required to allow the GitHub Action to authenticate with Deno Deploy.
+      contents: read
+
     steps:
       # 1. Checkout the repository (including LFS pointers)
       - name: Clone repository
@@ -31,22 +33,18 @@ jobs:
       #     git lfs checkout
 
       # 4. Install Deno runtime
-      - name: Install Deno
-        uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
+      # - name: Install Deno
+      #   uses: denoland/setup-deno@v2
+      #   with:
+      #     deno-version: v2.x
 
       # 5. Run any build steps (if needed)
       # - name: Build step
       #   run: deno task build
 
       # 6. Deploy to Deno Deploy
-      - name: Upload to Deno Deploy
+      - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "opendata"              # Replace with your project name
           entrypoint: "main.ts"            # Replace with your entrypoint file
-          root: "."                        # Adjust if needed
-          token: ${{ secrets.DENO_DEPLOY_TOKEN }}  # Use the secret for authentication
-        env:
-          DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
