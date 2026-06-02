@@ -1,13 +1,7 @@
-import { createApp } from "json-server/lib/app.js";
-import { Low } from "lowdb";
-import { JSONFile } from "lowdb/node";
+import { createServer } from "@jhordycg/json-server";
+import { resolve } from "@std/path/resolve";
 
-const adapter = new JSONFile("db.json");
-const db = new Low(adapter, {});
-await db.read();
+const dbFile = resolve("db.json") 
+const app = await createServer(dbFile);
 
-const app = createApp(db, { static: [] });
-
-app.listen(3000, () => {
-  console.log("JSON Server is running on port 3000");
-});
+export default { fetch: app.fetch };
