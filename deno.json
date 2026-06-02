@@ -1,11 +1,7 @@
 {
-  "deploy": {
-    "app": "opendata",
-    "org": "jhordycg"
-  },
   "imports": {
-    "json-server": "npm:json-server@1.0.0-beta.15",
-    "lowdb": "npm:lowdb@7.0.1"
+    "@jhordycg/json-server": "jsr:@jhordycg/json-server@0.1.2",
+    "@std/path": "jsr:@std/path@1.1.5"
   },
   "permissions": {
     "default": {
@@ -15,6 +11,15 @@
     }
   },
   "tasks": {
-    "deploy": "deno run -P main.ts"
+    "dev": "deno serve -P main.ts"
+  },
+  "deploy": {
+    "app": "opendata",
+    "org": "jhordycg",
+    "runtime": {
+      "cwd": ".",
+      "entrypoint": "main.ts",
+      "mode": "dynamic"
+    }
   }
 }
