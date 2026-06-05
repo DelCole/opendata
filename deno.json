@@ -1,7 +1,6 @@
 {
   "imports": {
-    "@jhordycg/json-server": "jsr:@jhordycg/json-server@0.1.2",
-    "@std/path": "jsr:@std/path@1.1.5"
+    "@jhordycg/json-server": "jsr:@jhordycg/json-server@0.2.0"
   },
   "permissions": {
     "default": {
@@ -10,16 +9,14 @@
       "read": true
     }
   },
+  "unstable": ["detect-cjs", "tsgo"],
   "tasks": {
-    "dev": "deno serve -P main.ts"
+    "dev": "deno serve -P main.ts",
+    "build": "deno bundle --minify --inline-imports --outdir dist main.ts"
   },
   "deploy": {
-    "app": "opendata",
     "org": "jhordycg",
-    "runtime": {
-      "cwd": ".",
-      "entrypoint": "main.ts",
-      "mode": "dynamic"
-    }
+    "app": "opendata"
   }
 }
+
