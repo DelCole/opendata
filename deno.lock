@@ -1,9 +1,12 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@bgub/eta@4.6.0": "4.6.0",
     "jsr:@hono/hono@4.12.23": "4.12.23",
-    "jsr:@jhordycg/json-server@0.1.2": "0.1.2",
+    "jsr:@jhordycg/json-server@0.2.0": "0.2.0",
     "jsr:@std/bytes@^1.0.6": "1.0.6",
+    "jsr:@std/cli@1.0.30": "1.0.30",
+    "jsr:@std/fmt@1.0.10": "1.0.10",
     "jsr:@std/fs@1.0.24": "1.0.24",
     "jsr:@std/internal@^1.0.14": "1.0.14",
     "jsr:@std/io@0.225.3": "0.225.3",
@@ -11,7 +14,6 @@
     "jsr:@std/path@^1.1.5": "1.1.5",
     "npm:chalk@5.6.2": "5.6.2",
     "npm:dot-prop@10.1.0": "10.1.0",
-    "npm:eta@4.5.0": "4.5.0",
     "npm:inflection@3.0.2": "3.0.2",
     "npm:json5@2.2.3": "2.2.3",
     "npm:lowdb@7.0.1": "7.0.1",
@@ -19,19 +21,24 @@
     "npm:type-fest@5.4.0": "5.4.0"
   },
   "jsr": {
+    "@bgub/eta@4.6.0": {
+      "integrity": "fe872004cd6c64ca25c7e71fd80bbbad7d8d552cefd31828bddddb7db0f79eb1"
+    },
     "@hono/hono@4.12.23": {
       "integrity": "9d9f3da498f69c311b5f92d973eb3b8ebc973b5fd2b4972781b556e07818a745"
     },
-    "@jhordycg/json-server@0.1.2": {
-      "integrity": "abcfbd262f00c286b2a7a9c05ea34a6ff9a67a5cff267d6e02c664a66c5de0d1",
+    "@jhordycg/json-server@0.2.0": {
+      "integrity": "76a2841934950c83f6c7fbc9bae76780854c46d181c10360d5a518a47db6d751",
       "dependencies": [
+        "jsr:@bgub/eta",
         "jsr:@hono/hono",
+        "jsr:@std/cli",
+        "jsr:@std/fmt",
         "jsr:@std/fs",
         "jsr:@std/io",
         "jsr:@std/path@1.1.5",
         "npm:chalk",
         "npm:dot-prop",
-        "npm:eta",
         "npm:inflection",
         "npm:json5",
         "npm:lowdb",
@@ -41,6 +48,12 @@
     },
     "@std/bytes@1.0.6": {
       "integrity": "f6ac6adbd8ccd99314045f5703e23af0a68d7f7e58364b47d2c7f408aeb5820a"
+    },
+    "@std/cli@1.0.30": {
+      "integrity": "769446536522d0417d7127ebcabcafac1ab0ce6766d0eb3fca1d36326fe98d13"
+    },
+    "@std/fmt@1.0.10": {
+      "integrity": "90dfba288802ac6de82fb31d0917eb9e4450b9925b954d5e51fc29ac07419db5"
     },
     "@std/fs@1.0.24": {
       "integrity": "f3061b45b81673a2bece689da041df32d174be064c89eb6397fb5718d3fb7877",
@@ -74,9 +87,6 @@
       "dependencies": [
         "type-fest"
       ]
-    },
-    "eta@4.5.0": {
-      "integrity": "sha512-qifAYjuW5AM1eEEIsFnOwB+TGqu6ynU3OKj9WbUTOtUBHFPZqL03XUW34kbp3zm19Ald+U8dEyRXaVsUck+Y1g=="
     },
     "inflection@3.0.2": {
       "integrity": "sha512-+Bg3+kg+J6JUWn8J6bzFmOWkTQ6L/NHfDRSYU+EVvuKHDxUDHAXgqixHfVlzuBQaPOTac8hn43aPhMNk6rMe3g=="
@@ -112,8 +122,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@jhordycg/json-server@0.1.2",
-      "jsr:@std/path@1.1.5"
+      "jsr:@jhordycg/json-server@0.2.0"
     ]
   }
 }

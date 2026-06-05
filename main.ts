@@ -1,7 +1,5 @@
-import { createServer } from "@jhordycg/json-server";
-import { resolve } from "@std/path/resolve";
+import { createApp } from "@jhordycg/json-server";
 
-const dbFile = resolve("db.json") 
-const app = await createServer(dbFile);
+const app = await createApp("db.json");
 
 export default { fetch: app.fetch };
