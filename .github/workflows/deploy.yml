@@ -12,8 +12,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true
-      - name: Deno Deploy
+      - name: Setup Deno Deploy
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
+      - name: Deploy to Deno Deplo
         run: deno deploy --token ${{ secrets.DENO_DEPLOY_TOKEN }}
