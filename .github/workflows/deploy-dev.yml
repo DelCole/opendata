@@ -1,6 +1,6 @@
-name: Deploy
+name: Deploy to Development
 on:
-  push:
+  pull_request:
     branches: [main]
 jobs:
   deploy:
@@ -15,4 +15,4 @@ jobs:
         with:
           deno-version: v2.x
       - name: Deploy to Deno Deplo
-        run: deno deploy --prod --token ${{ secrets.DENO_DEPLOY_TOKEN }}
+        run: deno deploy--token ${{ secrets.DENO_DEPLOY_TOKEN }}
