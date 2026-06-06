@@ -1,6 +1,7 @@
 {
   "imports": {
-    "@jhordycg/json-server": "jsr:@jhordycg/json-server@0.2.0"
+    "@hono/hono": "jsr:@hono/hono@4.12.23",
+    "@jhordycg/json-server": "jsr:@jhordycg/json-server@0.3.0"
   },
   "permissions": {
     "default": {
@@ -11,7 +12,7 @@
   },
   "unstable": ["detect-cjs", "tsgo"],
   "tasks": {
-    "dev": "deno serve -P main.ts",
+    "dev": "deno serve --watch-hmr -P main.ts",
     "build": "deno bundle --minify --inline-imports --outdir dist main.ts"
   },
   "deploy": {
