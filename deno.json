@@ -12,12 +12,14 @@
   },
   "unstable": ["detect-cjs", "tsgo"],
   "tasks": {
-    "dev": "deno serve --watch-hmr -P main.ts",
+    "dev": "deno serve --env-file --watch-hmr -P main.ts",
     "build": "deno bundle --minify --inline-imports --outdir dist main.ts"
   },
   "deploy": {
     "org": "jhordycg",
     "app": "opendata"
+  },
+  "fmt": {
+    "exclude": ["db.json"]
   }
 }
-
